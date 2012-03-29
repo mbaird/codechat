@@ -15,6 +15,13 @@
 		<label>Description</label>
 		<textarea rows="6" name="desc" placeholder="Type a short description"><?php echo set_value('desc'); ?></textarea>
 	</div>
+	<div class="control-group">
+		 <label class="checkbox">
+    		<input type="checkbox" name="private" > Make Private
+ 		 </label>
+	</div>
+
+
 	<input class="swapme" type="hidden" name="code" value="" />
 			<div class="control-group">
 		<label>Language</label>

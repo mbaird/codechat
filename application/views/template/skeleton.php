@@ -48,6 +48,10 @@
 	<script src="<?php echo base_url(JS."mode/css/css.js");?>"></script>
 	<script src="<?php echo base_url(JS."mode/clike/clike.js");?>"></script>
 	<script src="<?php echo base_url(JS."mode/php/php.js");?>"></script>
+	<script src="<?php echo base_url(JS."mode/perl/perl.js");?>"></script>
+	<script src="<?php echo base_url(JS."mode/python/python.js");?>"></script>
+	<script src="<?php echo base_url(JS."mode/ruby/ruby.js");?>"></script>
+	<script src="<?php echo base_url(JS."mode/mysql/mysql.js");?>"></script>
 
 	<script src="<?php echo base_url(JS."plugins.js");?>"></script>
 	<script src="<?php echo base_url(JS."script.js");?>"></script>

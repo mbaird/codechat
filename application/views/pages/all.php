@@ -13,9 +13,9 @@
 </thead>
 <tbody>
 
-<?php foreach($pastes as $p):?>
+<?php  foreach($pastes as $p):?>
 <tr>
-	<?php echo '<td>' . $p['title'] . '</td><td>' . $p['description'] . '</td><td>'. $p['lang'] . '</td><td> ' . date('jS M Y H:i', $p['created']) . '</td><td><a href="/view/' . $p['pid'] . '/">View Paste</a></td>'; ?>
+	<?php echo '<td>' . $p['title'] . '</td><td>' . $p['description'] . '</td><td>'. $p['pretty'] . '</td><td> ' . date('jS M Y H:i', $p['created']) . '</td><td><a href="/view/' . $p['pid'] . '/">View Paste</a></td>'; ?>
 </tr>
 <?php endforeach;?>
 </tbody>

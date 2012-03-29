@@ -9,7 +9,11 @@
 </div>
 
 <div class="span9">
-
+	<div class="page-header" style="padding-bottom: 5px; margin-top: 0" >
+  <h2><?php echo $codetitle ?></h2>
+  <p><?php echo $codedesc ?>&nbsp;</p>
+</div>
+	
 	<section id="typography">
 		<div id="theViewer" class="editorArea"></div>
 	</section>
@@ -18,11 +22,13 @@
 		<input type="hidden" name="code" class="dropPid" value="<?php if(isset($pid)){ echo $pid; }?>" />
 		<input type="hidden" name="lang" class="dropLang" value="<?php if(isset($lang_code)){ echo $lang_code; }?>"/>
 	</form>
+
 	
 </div>
  <div class="span3">
  	<?php echo validation_errors(); ?>
-	<form class="well" action="<?=base_url() . 'view/' . $pid . '/'  ?>" method="post" >
+ 	<div class="well">
+	<form action="<?=base_url() . 'view/' . $pid . '/'  ?>" method="post" >
 	<input class="swapme" type="hidden" name="code" value="" />
 		<input type="hidden" name="lang" class="dropLang" value="<?php if(isset($lang_code)){ echo $lang_code; }?>"/>
 		<label>Revision</label>
@@ -33,6 +39,13 @@
 
 		
 	</form>
+
+	
+			<label>Short URL</label>
+			<input type="text" />
+
+
+	</div>
 
 	<div id="chat_widget_container" class="well" >
 	 	<h4>Loading Chat...</h4>

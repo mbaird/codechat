@@ -78,8 +78,19 @@ class Pastes extends CI_Model {
             $data['lang_code'] = $row['lang'];
             $data['lang'] = $this->languages->code_to_description($row['lang']);
             $data['raw'] = $row['raw'];
-            $data['rev'] = $row['revision'];       
+            $data['rev'] = $row['revision'];      
         }
+
+        $this->db->where('revision', 0);
+        $this->db->where('pid', $pid);
+        $this->db->select(array('title', 'description'));
+        $query = $this->db->get('pastes');
+
+        foreach ($query->result_array() as $row)
+        {
+            $data['codetitle'] = $row['title'];
+            $data['codedesc'] = $row['description'];   
+        }       
         
         return $data;
 
@@ -131,8 +142,10 @@ class Pastes extends CI_Model {
 
     function getPastes($num, $offset) {
 
-        $this->db->select(array('pid', 'lang', 'created', 'title', 'description'));
+        $this->db->select(array('pid', 'lang', 'created', 'title', 'pastes.description', 'languages.pretty'));
+        $this->db->join('languages', 'languages.code = pastes.lang');
         $this->db->where('revision', 0);
+        $this->db->where('private', 0);
         $query = $this->db->get('pastes',$num, $offset);
 
         if($query->num_rows()>0){
@@ -143,7 +156,9 @@ class Pastes extends CI_Model {
 
     function getNumPastes() {
 
-        return $this->db->count_all('pastes');
+        $this->db->where('private', 0);
+        $this->db->where('revision', 0);
+        return $this->db->count_all_results('pastes');
 
     }
 
@@ -188,9 +203,8 @@ class Pastes extends CI_Model {
         $data['user'] = 1;
         $data['lang'] = htmlspecialchars($this->input->post('lang'));
         $data['raw'] = htmlspecialchars($this->input->post('code'));
-        $data['private'] = 0;
+        $data['private'] = $this->input->post('private') ? '1' : '0';
         $data['created'] = time();
-
         $data['title'] = htmlspecialchars($this->input->post('title'));
         $data['description'] = htmlspecialchars($this->input->post('desc'));
 

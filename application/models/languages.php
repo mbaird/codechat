@@ -55,7 +55,7 @@ class Languages extends CI_Model
 		
 		foreach($query->result_array() as $row)
 		{
-			$data[$row['code']] = $row['description'];
+			$data[$row['code']] = $row['pretty'];
 		}
 		
 		return $data;
@@ -72,7 +72,7 @@ class Languages extends CI_Model
 	
 	function code_to_description($code)
 	{
-		$this->db->select('description');
+		$this->db->select('pretty');
 		$this->db->where('code', $code);
 		$query = $this->db->get('languages');
 		
@@ -80,7 +80,7 @@ class Languages extends CI_Model
 		{
 			foreach($query->result_array() as $row)
 			{
-				return $row['description'];
+				return $row['pretty'];
 			}
 		}
 		else
