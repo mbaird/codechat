@@ -50,7 +50,8 @@ class MY_Controller extends CI_Controller{
 		//nav menu
 		if($this->hasNav){
 			$this->load->helper("nav");
-			$toMenu["pageName"] = $this->pageName;
+			//$toMenu["pageName"] = $this->pageName;
+			$toMenu["pageName"] = $view;
 			$toHeader["nav"] = $this->load->view("template/nav",$toMenu,true);
 		}
 		$toHeader["basejs"] = $this->load->view("template/basejs",$this->data,true);

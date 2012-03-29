@@ -1,3 +1,13 @@
+
+
+<div class="span12">
+	<div class="alert fade in alert-success new-revision">
+		<a class="close" data-dismiss="alert">×</a>
+		<h4 class="alert-heading">Hey there!</h4>
+		Another revision of this code has been submitted! Click <a href="/view/<?php echo $pid ?>">here</a> to view it.
+	</div>
+</div>
+
 <div class="span9">
 
 	<section id="typography">
@@ -11,11 +21,12 @@
 	
 </div>
  <div class="span3">
+ 	<?php echo validation_errors(); ?>
 	<form class="well" action="<?=base_url() . 'view/' . $pid . '/'  ?>" method="post" >
 	<input class="swapme" type="hidden" name="code" value="" />
 		<input type="hidden" name="lang" class="dropLang" value="<?php if(isset($lang_code)){ echo $lang_code; }?>"/>
 		<label>Revision</label>
-		<?php $rev_extra = 'id="select02" class="select" tabindex="3"';  echo form_dropdown('rev_select', $revs, $rev, $rev_extra); ?>
+		<?php $rev_extra = 'id="select02" tabindex="3"';  echo form_dropdown('rev_select', $revs, $rev, $rev_extra); ?>
 
             <button type="submit" name="submit" value="submit" class="btn btn-primary">Save New Revision</button>
    
@@ -24,7 +35,7 @@
 	</form>
 
 	<div id="chat_widget_container" class="well" >
-	 	<h4>Chat</h4>
+	 	<h4>Loading Chat...</h4>
 
 
      	<div id="chat_widget_login">

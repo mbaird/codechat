@@ -129,6 +129,24 @@ class Pastes extends CI_Model {
 
     }
 
+    function getPastes($num, $offset) {
+
+        $this->db->select(array('pid', 'lang', 'created', 'title', 'description'));
+        $this->db->where('revision', 0);
+        $query = $this->db->get('pastes',$num, $offset);
+
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }
+
+    }
+
+    function getNumPastes() {
+
+        return $this->db->count_all('pastes');
+
+    }
+
     function createRevision($seg=2) {
 
         $data['id'] = NULL;
@@ -151,12 +169,14 @@ class Pastes extends CI_Model {
 
         //Set PID
         $data['pid'] = $pid;
-         
+
         // Set Revision
         $data['revision'] = $this->latestRevision($pid) + 1;
 
         $this->db->insert('pastes', $data); 
 
+        $this->load->library('pusher');
+        $this->pusher->trigger('presence-' . $pid, 'new_revision', array('success' => true));
 
         return 'view/'.$pid;
 
@@ -170,6 +190,9 @@ class Pastes extends CI_Model {
         $data['raw'] = htmlspecialchars($this->input->post('code'));
         $data['private'] = 0;
         $data['created'] = time();
+
+        $data['title'] = htmlspecialchars($this->input->post('title'));
+        $data['description'] = htmlspecialchars($this->input->post('desc'));
 
         do {
         

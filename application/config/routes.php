@@ -54,6 +54,8 @@ View -> 'home' - creat new form, 'view' - show the specfied paste
 $route['default_controller'] = "home";
 $route['view/raw/:any'] = 'home/raw/';
 $route['view/:any'] = 'home/view';
+$route['list'] = 'home/listall';
+$route['list/:any'] = 'home/listall';
 $route['chat'] = 'chat';
 $route['404_override'] = '';
 

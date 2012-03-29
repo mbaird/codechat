@@ -52,6 +52,10 @@
 	<script src="<?php echo base_url(JS."plugins.js");?>"></script>
 	<script src="<?php echo base_url(JS."script.js");?>"></script>
 
+	<?php if ($pusher) { ?>
+		<script src="<?php echo base_url(JS."pusher_code.js");?>"></script>
+	<?php } ?>
+
 	<script>
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

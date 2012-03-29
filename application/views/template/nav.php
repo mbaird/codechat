@@ -6,7 +6,7 @@
 <a class="brand" href="/"><?php echo $this->config->item('site_title'); ?></a>
 <div class="nav-collapse">
   <ul class="nav">
-  	<li class=" active"><a class="<?php echo isActive($pageName,"home")?>" href="<?php echo  base_url()?>">Home</a></li>
-  	<li><a class="<?php echo isActive($pageName,"code")?>" href="<?php echo  base_url()?>">Code</a></li>
+  	<li class="<?php echo isActive($pageName,"pages/view");  echo isActive($pageName,"pages/home");?>" ><a  href="<?php echo  base_url()?>">Home</a></li>
+  	<li class="<?php echo isActive($pageName,"pages/all")?>" ><a  href="<?php echo  base_url() . 'list'; ?>">View Code List</a></li>
   </ul>
 </div>
