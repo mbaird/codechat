@@ -27,8 +27,8 @@ function pusherEvents() {
 			$('#chat_widget_main_container').hide(); //Show Chat
 			$('#chat_widget_container h4').html('Chat');
 
-		});
-	
+	});
+
 	/* Pusher Events */
 	pusher.connection.bind('connected', function() {
 
@@ -103,12 +103,10 @@ $('#chat_widget_login_button').click(function() {
 
 		var value = $(this).val();
     	if ( value.length > 255 ) {
-    		$('#chat_widget_input').tooltip('show');
     		$('#chat_widget_button').attr("disabled", true);
     		$('#chat_widget_button').addClass('disabled');
     		return false;
     	} else {
-    		$('#chat_widget_input').tooltip('hide');
     		$('#chat_widget_button').removeClass("disabled");
     		$('#chat_widget_button').removeAttr('disabled');
     	}

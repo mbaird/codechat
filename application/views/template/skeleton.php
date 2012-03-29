@@ -23,11 +23,6 @@
 <link rel="stylesheet" href="<?php echo base_url().CSS.$c?>">
 <?php endforeach;?>
 
-<!-- extra fonts-->
-<?php foreach($fonts as $f):?>
-<link href="http://fonts.googleapis.com/css?family=<?php echo $f?>"
-	rel="stylesheet" type="text/css">
-<?php endforeach;?>
 <script src="<?php echo base_url(JS."libs/modernizr-2.5.3.min.js");?>"></script>
 
 </head>

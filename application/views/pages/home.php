@@ -1,5 +1,8 @@
 <div class="span9">
-	
+	<div class="page-header" style="padding-bottom: 5px; margin-top: 0" >
+		<h2>Welcome to Codechat</h2>
+		<p>Paste your code in below, or click above to view existing code snippets.</p>
+	</div>
 	<section id="typography">
 		<div id="theEditor" class="editorArea"></div>
 	</section>
