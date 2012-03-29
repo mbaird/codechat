@@ -75,12 +75,12 @@ class Chat extends MY_Controller {
 
 		session_start();
 
-		/*
-		if (!isset($_SESSION['username'])) {
+		
+		if (!isset($_SESSION['userid'])) {
 			
-			$_SESSION['username'] = 'user-' . $_SESSION['userid'];	
+			echo 'LETS <@! BREAK THIS MOFO';
 		}
-		*/
+		
 
 		$username = $_SESSION['username'];
 		$uid = $_SESSION['userid'];
