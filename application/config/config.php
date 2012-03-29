@@ -14,7 +14,13 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://codechat.pagodabox.com/';
+
+$config['base_url'] = "http://". $_SERVER["HTTP_HOST"].'/';
+
+if($_SERVER['SERVER_NAME'] == 'localhost')
+{
+    $config['base_url']    = "http://localhost/";
+} 
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +50,7 @@ $config['index_page'] = '';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'REQUEST_URI';
+$config['uri_protocol']	= 'AUTO';
 
 /*
 |--------------------------------------------------------------------------

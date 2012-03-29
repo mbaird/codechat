@@ -48,19 +48,42 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-// LOCALHOST
-/*
+$db['production']['hostname'] = $_SERVER["DB1_HOST"];
+$db['production']['username'] = $_SERVER["DB1_USER"];
+$db['production']['password'] = $_SERVER["DB1_PASS"];
+$db['production']['database'] = $_SERVER["DB1_NAME"];
+$db['production']['port']     = "3306";
+$db['production']['dbdriver'] = "mysql";
+$db['production']['dbprefix'] = "";
+$db['production']['pconnect'] = TRUE;
+$db['production']['db_debug'] = TRUE;
+$db['production']['cache_on'] = FALSE;
+$db['production']['cachedir'] = "";
+$db['production']['char_set'] = "utf8";
+$db['production']['dbcollat'] = "utf8_general_ci";
+$db['production']['swap_pre'] = '';
+$db['production']['autoinit'] = TRUE;
+$db['production']['stricton'] = FALSE;
+ 
+
+// Switch active_group based on environment
+switch (ENVIRONMENT) {
+    case 'production':
+        $active_group = 'production';
+    break;
+ 
+    // add additional cases for more environments
+ 
+    default:
+        $active_group = 'default';
+    break;
+}
+
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'coder';
 $db['default']['password'] = 'pass';
 $db['default']['database'] = 'codechat';
-*/
-
-$db['default']['hostname'] = $_SERVER["DB1_HOST"];
-$db['default']['username'] = $_SERVER["DB1_USER"];
-$db['default']['password'] = $_SERVER["DB1_PASS"];
-$db['default']['database'] = $_SERVER["DB1_NAME"];
-
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -72,6 +95,8 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+
 
 
 /* End of file database.php */
