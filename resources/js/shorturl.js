@@ -16,4 +16,3 @@ ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it
 			}
 		});
 	}
-\
