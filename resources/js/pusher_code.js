@@ -21,6 +21,14 @@ function pusherEvents() {
 	$('#chat_widget_login_button').button();
 
 
+	channel.bind('pusher:subscription_error', function(members) {  
+
+			$('#chat_widget_login').slideDown(); //Hide Login
+			$('#chat_widget_main_container').hide(); //Show Chat
+			$('#chat_widget_container h4').html('Chat');
+
+		});
+	
 	/* Pusher Events */
 	pusher.connection.bind('connected', function() {
 
@@ -49,13 +57,7 @@ function pusherEvents() {
 
 		});
 
-		channel.bind('pusher:subscription_error', function(members) {  
-
-			$('#chat_widget_login').slideDown(); //Hide Login
-			$('#chat_widget_main_container').hide(); //Show Chat
-			$('#chat_widget_container h4').html('Chat');
-
-		});
+	
 
 		channel.bind('pusher:member_added', function(member) {
 			$('#chat_widget_online_list').append('<li class="chat_widget_member" ' +

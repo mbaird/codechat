@@ -1,9 +1,9 @@
-ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values ("' + window.location + '", 5)&format=json', 
+ajaxCall2('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values ("' + window.location + '", 5)&format=json', 
 	function(msg) {
 		$('.shorturl').val(msg.query.results.url);
 	});
 
-	function ajaxCall(ajax_url, successCallback) {
+	function ajaxCall2(ajax_url, successCallback) {
 		$.ajax({
 			type : "POST",
 			url : ajax_url,
