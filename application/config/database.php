@@ -48,10 +48,20 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['production']['hostname'] = $_SERVER["DB1_HOST"];
-$db['production']['username'] = $_SERVER["DB1_USER"];
-$db['production']['password'] = $_SERVER["DB1_PASS"];
-$db['production']['database'] = $_SERVER["DB1_NAME"];
+// Switch active_group based on environment
+switch (ENVIRONMENT) {
+    case 'production':
+        $active_group = 'production';
+        $db['production']['hostname'] = $_SERVER["DB1_HOST"];
+		$db['production']['username'] = $_SERVER["DB1_USER"];
+		$db['production']['password'] = $_SERVER["DB1_PASS"];
+		$db['production']['database'] = $_SERVER["DB1_NAME"];
+    break;
+ 
+}
+
+
+
 $db['production']['port']     = "3306";
 $db['production']['dbdriver'] = "mysql";
 $db['production']['dbprefix'] = "";
@@ -66,18 +76,7 @@ $db['production']['autoinit'] = TRUE;
 $db['production']['stricton'] = FALSE;
  
 
-// Switch active_group based on environment
-switch (ENVIRONMENT) {
-    case 'production':
-        $active_group = 'production';
-    break;
- 
-    // add additional cases for more environments
- 
-    default:
-        $active_group = 'default';
-    break;
-}
+
 
 
 $db['default']['hostname'] = 'localhost';

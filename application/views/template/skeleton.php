@@ -58,13 +58,8 @@
 
 	<?php if ($pusher) { ?>
 		<script src="<?php echo base_url(JS."pusher_code.js");?>"></script>
+		<script src="<?php echo base_url(JS."shorturl.js");?>"></script>
 	<?php } ?>
-
-	<script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
+	
 </body>
 </html>
