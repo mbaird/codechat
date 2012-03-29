@@ -8,7 +8,7 @@ class MY_Controller extends CI_Controller{
 	protected $template = "main";
 	protected $hasNav = TRUE;
 	//Page contents
-	protected $javascript = array('codemirror.js', 'libs/pusher.min.js', 'libs/bootstrap-alert.js', 'libs/bootstrap-button.js');
+	protected $javascript = array('codemirror.js', 'libs/pusher.min.js', 'libs/bootstrap-alert.js', 'libs/bootstrap-button.js', 'libs/bootstrap-tooltip.js');
 	protected $css = array('codemirror.css');
 	protected $fonts = array();
 	//Page Meta

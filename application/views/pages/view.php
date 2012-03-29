@@ -59,7 +59,7 @@
 
 	         <div id="chat_widget_input_container">
 	            <form method="post" id="chat_widget_form">
-	               <input type="text" id="chat_widget_input" placeholder="Type a message here..." />
+	               <input type="text" id="chat_widget_input" rel="tooltip" title="first tooltip" placeholder="Type a message here..." />
 	               <input type="hidden" id="channel_name" value="presence-<?php if(isset($pid)){ echo $pid; }?>" />
 	               <button type="submit"id="chat_widget_button" data-loading-text="Sending..." class="btn btn-secondary" >Send</button>
 	            </form>

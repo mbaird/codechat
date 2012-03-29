@@ -6,6 +6,9 @@ var pid = $('.dropPid').val();
 $(document).ready(function() {
   pusherEvents();
 
+  
+
+
 });
 
 function pusherEvents() {
@@ -93,8 +96,27 @@ $('#chat_widget_login_button').click(function() {
 	}
 }); // END CLICK FUNCTION
 
+	$('#chat_widget_input').keypress(function() {
+
+
+		var value = $(this).val();
+    	if ( value.length > 255 ) {
+    		$('#chat_widget_input').tooltip('show');
+    		$('#chat_widget_button').attr("disabled", true);
+    		$('#chat_widget_button').addClass('disabled');
+    		return false;
+    	} else {
+    		$('#chat_widget_input').tooltip('hide');
+    		$('#chat_widget_button').removeClass("disabled");
+    		$('#chat_widget_button').removeAttr('disabled');
+    	}
+
+
+	});
+
 /* New Message */
 $('#chat_widget_form').submit(function() {
+
 	var chat_widget_input = $('#chat_widget_input'),
 	chat_widget_button = $('#chat_widget_button'),
 	message = chat_widget_input.val(); 
