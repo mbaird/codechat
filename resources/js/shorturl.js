@@ -1,4 +1,4 @@
-ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values ("' + window.location + '/view/' + $('.dropPid').val() + '/' + '", 5)&format=json', 
+ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values ("' + window.location + '", 5)&format=json', 
 	function(msg) {
 		$('.shorturl').val(msg.query.results.url);
 	});
@@ -16,3 +16,4 @@ ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it
 			}
 		});
 	}
+\
