@@ -25,7 +25,3 @@ tmp/**/*
 *.7z
 *.dmg
 *.gz
-
-CodeMirror-2.23/demo/formatting.html
-
-.htaccess
