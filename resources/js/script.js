@@ -47,14 +47,38 @@ $('.dropdown-toggle').dropdown();
 		$('.swapme').val(Editor.getValue());
 	});
 
+
 	/* URL Shorten */
+
+	alert(window.location);
+
+	ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values ("' + 'http://www.google.com' + '", 5)&format=json', 
+	function(msg) {
+		//alert(msg.query.results.url);
+		$('.shorturl').val(msg.query.results.url);
+	});
+
+	function ajaxCall(ajax_url, successCallback) {
+		$.ajax({
+			type : "POST",
+			url : ajax_url,
+			dataType : "json",
+			time : 10,
+			success : function(msg) {
+				successCallback(msg);
+			},
+			error: function(msg) {
+			}
+		});
+	}
+
 	/*
 	var short = function(){
 		var x = document.getElementById('shortform');
 		x.onsubmit = function(){
 			//var url = document.getElementById('url').value;
 			var url = 'http://localhost/view/12567313/1';
-			var service = 'http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values (\''+encodeURIComponent(url)+'\', 5)&format=json&callback=short.shorter'
+			var service = 
 			var jp = document.createElement('script');
 			jp.setAttribute('type','text/javascript');
 			jp.setAttribute('src',service);
