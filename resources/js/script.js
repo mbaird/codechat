@@ -50,7 +50,7 @@ $('.dropdown-toggle').dropdown();
 
 	/* URL Shorten */
 
-	alert(window.location);
+	//alert(window.location);
 
 	ajaxCall('http://query.yahooapis.com/v1/public/yql?q=insert into yahoo.y.ahoo.it (url, keysize) values ("' + 'http://www.google.com' + '", 5)&format=json', 
 	function(msg) {
