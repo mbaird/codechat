@@ -20,11 +20,11 @@
 		<div id="theViewer" class="editorArea"></div>
 	</section>
 
-	<form>
+	
 		<input type="hidden" name="code" class="dropCode" value="<?php if(isset($raw)){ echo $raw; }?>" />
 		<input type="hidden" name="code" class="dropPid" value="<?php if(isset($pid)){ echo $pid; }?>" />
 		<input type="hidden" name="lang" class="dropLang" value="<?php if(isset($lang_code)){ echo $lang_code; }?>"/>
-	</form>
+
 
 </div>
 
@@ -49,7 +49,7 @@
 
 	</div>
 
-	<div id="chat_widget_container" class="well" >
+	<div id="chat_widget_container" class="well" style="margin-bottom: 0;" >
 		<h4>Loading Chat...</h4>
 		<div id="chat_widget_login">
 			<label for="chat_widget_username">Name:</label>
@@ -57,6 +57,7 @@
 			<button type="button" class="btn btn-primary" data-loading-text="Loading..." id="chat_widget_login_button">Login</button>
 		</div>
 		<div id="chat_widget_main_container" >
+			Users Online: <span id="chat_widget_counter" >0</span>
 			<div id="chat_widget_messages_container" class="chat-messages" >
 				<div id="chat_widget_messages"></div>
 			</div>
